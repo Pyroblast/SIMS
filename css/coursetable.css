@@ -1,0 +1,30 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.panel-success {
+  border-color: #47a447;
+}
+
+.panel-success > .panel-heading {
+  color: #ffffff;
+  background-color: #47a447;
+  border-color: #47a447;
+}
+
+.panel-success > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #47a447;
+}
+
+.panel-success > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #47a447;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #47a447;
+}
