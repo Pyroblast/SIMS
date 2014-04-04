@@ -11,8 +11,8 @@ Students' Information Management System
 
 ### Screenshoot
 
-![github](http://github.com/Pyroblast/SIMS/blob/master/preview1.png "preview1")
-![github](http://github.com/Pyroblast/SIMS/blob/master/preview2.png "preview2")
+![github](https://raw.githubusercontent.com/Pyroblast/SIMS/master/preview1.png)
+![github](https://raw.githubusercontent.com/Pyroblast/SIMS/master/preview2.png)
 
 
 ###Contect
