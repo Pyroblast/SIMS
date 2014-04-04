@@ -1,23 +1,28 @@
 <?php
 session_start();
-$mysql_servername = "localhost"; //������ַ
-$mysql_username = "root"; //���ݿ��û���
-$mysql_password =""; //���ݿ�����
-$mysql_database ="student"; //���ݿ�
+$mysql_servername = "localhost"; //主机地址
+$mysql_username = "root"; //数据库用户名
+$mysql_password =""; //数据库密码
+$mysql_database ="student"; //数据库
 mysql_connect($mysql_servername , $mysql_username , $mysql_password);
 mysql_select_db($mysql_database); 
+mysql_query("set character set 'utf8'");//读库
+mysql_query("set names 'utf8'");//写库
+
 if(mysqli_connect_errno())
 {
-echo "�������ݿ�ʧ��";
+echo "连接数据库失败";
 exit;
 }  
 ?>
 
 <!DOCTYPE html>
 <html lang="zh-cn">
+  <meta charset="utf-8">
+
   <head>
 
-    <title>ѧ����Ϣ����ϵͳ | ѧ���γ̴��</title>
+    <title>学生信息管理系统 | 学生课程打分</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../SIMS/css/bootstrap.css" rel="stylesheet">
@@ -46,20 +51,20 @@ exit;
     <div class="container">
 
       <form class="form-signin" action="student_mark_changed.php" method="post" role="form">
-        <h2 class="form-signin-heading">ѧ���γ̴��</h2>
+        <h2 class="form-signin-heading">学生课程打分</h2>
 		<br />
 		<h3 style="text-align:center">
 		<?php
-		echo "ѧ��: $Sno �γ�: $Cname";
+		echo "学号: $Sno 课程: $Cname";
 		
 		?>
 		</h3>
 		
-        <input type="text" class="form-control" placeholder="����" name="mark" required autofocus>
+        <input type="text" class="form-control" placeholder="分数" name="mark" required autofocus>
 		<br />
-        <button class="btn btn-lg btn-primary btn-block" type="submit">�ύ</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
 		<br />
-		<button type="button" class="btn btn-block btn-default" onclick="location.href='javascript:window.history.back();'">����</button>
+		<button type="button" class="btn btn-block btn-default" onclick="location.href='javascript:window.history.back();'">返回</button>
       </form>
 
     </div> <!-- /container -->

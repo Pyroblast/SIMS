@@ -1,22 +1,25 @@
 <?php
 session_start();
-$mysql_servername = "localhost"; //������ַ
-$mysql_username = "root"; //���ݿ��û���
-$mysql_password =""; //���ݿ�����
-$mysql_database ="student"; //���ݿ�
+$mysql_servername = "localhost"; //主机地址
+$mysql_username = "root"; //数据库用户名
+$mysql_password =""; //数据库密码
+$mysql_database ="student"; //数据库
 mysql_connect($mysql_servername , $mysql_username , $mysql_password);
 mysql_select_db($mysql_database); 
+mysql_query("set character set 'utf8'");//读库
+mysql_query("set names 'utf8'");//写库
+
 if(mysqli_connect_errno())
 {
-echo "�������ݿ�ʧ��";
+echo "连接数据库失败";
 exit;
 }  
 ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
-
-    <title>ѧ����Ϣ����ϵͳ | ѧ���γ̲�ѯ</title>
+	<meta charset="utf-8">
+    <title>学生信息管理系统 | 学生课程查询</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../SIMS/css/bootstrap.css" rel="stylesheet">
@@ -40,13 +43,13 @@ exit;
     <div class="container" style="width:400px">
 		<div class="panel panel-success">
 		<!-- Default panel contents -->
-			<div class="panel-heading">ѧ���γ̲�ѯ</div>
+			<div class="panel-heading">学生课程查询</div>
 
 				<!-- Table -->
 				<table class="table table-hover table-bordered">
 				<tr class="success">
-				<td>�γ�</td>
-				<td>����</td>
+				<td>课程</td>
+				<td>分数</td>
 				<td style="width:56px"></td>
 				</tr>
 
@@ -99,7 +102,7 @@ exit;
 						</select>
 					</div>
 				    <div style="float:right;">
-						<button type="submit" class="btn btn-success">���ӿγ�</button>
+						<button type="submit" class="btn btn-success">添加课程</button>
 					</div>
 
 				</form>

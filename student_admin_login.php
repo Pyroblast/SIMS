@@ -1,14 +1,16 @@
 <?php
 session_start();
-$mysql_servername = "localhost"; //Ö÷»úµØÖ·
-$mysql_username = "root"; //Êı¾İ¿âÓÃ»§Ãû
-$mysql_password =""; //Êı¾İ¿âÃÜÂë
-$mysql_database ="student"; //Êı¾İ¿â
+$mysql_servername = "localhost"; //ä¸»æœºåœ°å€
+$mysql_username = "root"; //æ•°æ®åº“ç”¨æˆ·å
+$mysql_password =""; //æ•°æ®åº“å¯†ç 
+$mysql_database ="student"; //æ•°æ®åº“
 mysql_connect($mysql_servername , $mysql_username , $mysql_password);
 mysql_select_db($mysql_database); 
+mysql_query("set character set 'utf8'");//è¯»åº“
+mysql_query("set names 'utf8'");//å†™åº“
 if(mysqli_connect_errno())
 {
-echo "Á¬½ÓÊı¾İ¿âÊ§°Ü";
+echo "è¿æ¥æ•°æ®åº“å¤±è´¥";
 exit;
 }
 $id=$_POST['id'];
@@ -21,16 +23,16 @@ if ($id && $password){
      $rows=mysql_num_rows($res);
 	 
 	  if($rows){
-		   header("refresh:0;url=student_admin_result.php");//Ìø×ªÒ³Ãæ£¬×¢ÒâÂ·¾¶
+		   header("refresh:0;url=student_admin_result.php");//è·³è½¬é¡µé¢ï¼Œæ³¨æ„è·¯å¾„
 		   exit;
 	   } else {
-			echo "<script language='javascript'>alert('ÕËºÅ»òÃÜÂë²»ÕıÈ·£¡');history.back();</script>";
+			echo "<script language='javascript'>alert('è´¦å·æˆ–å¯†ç ä¸æ­£ç¡®ï¼');history.back();</script>";
 	   }
  }
 
 else 
 {
- echo "<script language='javascript'>alert('ÕËºÅºÍÃÜÂë²»ÄÜÎª¿Õ!');history.back();</script>";
+ echo "<script language='javascript'>alert('è´¦å·å’Œå¯†ç ä¸èƒ½ä¸ºç©º!');history.back();</script>";
 }
 
 

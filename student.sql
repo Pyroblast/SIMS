@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 04 月 03 日 05:54
+-- 生成日期: 2014 年 04 月 04 日 12:22
 -- 服务器版本: 5.1.41
 -- PHP 版本: 5.3.1
 
@@ -26,16 +26,17 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 
 CREATE TABLE IF NOT EXISTS `admin` (
-  `id` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `password` varchar(50) CHARACTER SET utf8 NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `id` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `admin`
 --
 
 INSERT INTO `admin` (`id`, `password`) VALUES
-('admin', '12345');
+('admin', '12345'),
+('管理员', '1');
 
 -- --------------------------------------------------------
 
@@ -45,8 +46,8 @@ INSERT INTO `admin` (`id`, `password`) VALUES
 
 CREATE TABLE IF NOT EXISTS `course` (
   `Cno` int(10) NOT NULL,
-  `Cname` varchar(50) CHARACTER SET utf8 NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Cname` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `course`
@@ -61,14 +62,14 @@ CREATE TABLE IF NOT EXISTS `course` (
 
 CREATE TABLE IF NOT EXISTS `sreport` (
   `Key` bigint(20) NOT NULL AUTO_INCREMENT,
-  `Sno` varchar(10) CHARACTER SET utf8 NOT NULL,
-  `Cname` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `Sno` varchar(10) NOT NULL,
+  `Cname` varchar(50) NOT NULL,
   `Mark` int(10) NOT NULL,
   PRIMARY KEY (`Key`),
   UNIQUE KEY `Key_3` (`Key`),
   KEY `Key` (`Key`),
   KEY `Key_2` (`Key`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=82 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=96 ;
 
 --
 -- 转存表中的数据 `sreport`
@@ -78,6 +79,9 @@ INSERT INTO `sreport` (`Key`, `Sno`, `Cname`, `Mark`) VALUES
 (13, '001', 'Chinese', 0),
 (14, '001', 'Math', 0),
 (15, '001', 'English', 0),
+(84, '018', 'Chinese', 0),
+(85, '018', 'Math', 0),
+(86, '018', 'English', 0),
 (33, '002', 'Chinese', 0),
 (34, '002', 'Math', 0),
 (35, '002', 'English', 0),
@@ -125,7 +129,16 @@ INSERT INTO `sreport` (`Key`, `Sno`, `Cname`, `Mark`) VALUES
 (77, '016', 'English', 0),
 (78, '017', 'Chinese', 0),
 (79, '017', 'Math', 0),
-(80, '017', 'English', 0);
+(80, '017', 'English', 0),
+(87, '019', 'Chinese', 0),
+(88, '019', 'Math', 0),
+(89, '019', 'English', 0),
+(90, '020', 'Chinese', 0),
+(91, '020', 'Math', 0),
+(92, '020', 'English', 0),
+(93, '018', '', 0),
+(94, '018', '', 0),
+(95, '018', '', 0);
 
 -- --------------------------------------------------------
 
@@ -134,13 +147,13 @@ INSERT INTO `sreport` (`Key`, `Sno`, `Cname`, `Mark`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `student` (
-  `Sno` varchar(10) CHARACTER SET utf8 NOT NULL,
-  `Sname` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `age` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `Ssex` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `sdept` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `password` varchar(50) CHARACTER SET utf8 NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Sno` varchar(10) NOT NULL,
+  `Sname` varchar(50) NOT NULL,
+  `age` varchar(50) NOT NULL,
+  `Ssex` varchar(50) NOT NULL,
+  `sdept` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `student`
@@ -163,7 +176,8 @@ INSERT INTO `student` (`Sno`, `Sname`, `age`, `Ssex`, `sdept`, `password`) VALUE
 ('014', 'Ella', '20', 'Female', 'History', '014'),
 ('015', 'Diana', '20', 'Female', 'Computer Science', '015'),
 ('016', 'Dennis', '20', 'Male', 'Architecture', '016'),
-('017', 'Bob', '20', 'Male', 'Biology', '017');
+('017', 'Bob', '20', 'Male', 'Biology', '017'),
+('018', '张三', '20', 'Male', 'Architecture', '018');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

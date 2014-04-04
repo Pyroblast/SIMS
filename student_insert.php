@@ -1,15 +1,17 @@
 <?php
 ob_start();
 session_start();
-$mysql_servername = "localhost"; //Ö÷»úµØÖ·
-$mysql_username = "root"; //Êı¾İ¿âÓÃ»§Ãû
-$mysql_password =""; //Êı¾İ¿âÃÜÂë
-$mysql_database ="student"; //Êı¾İ¿â
+$mysql_servername = "localhost"; //ä¸»æœºåœ°å€
+$mysql_username = "root"; //æ•°æ®åº“ç”¨æˆ·å
+$mysql_password =""; //æ•°æ®åº“å¯†ç 
+$mysql_database ="student"; //æ•°æ®åº“
 mysql_connect($mysql_servername , $mysql_username , $mysql_password);
 mysql_select_db($mysql_database); 
+mysql_query("set character set 'utf8'");//è¯»åº“
+mysql_query("set names 'utf8'");//å†™åº“
 if(mysqli_connect_errno())
 {
-echo "Á¬½ÓÊı¾İ¿âÊ§°Ü";
+echo "è¿æ¥æ•°æ®åº“å¤±è´¥";
 exit;
 }
 	$Sno=$_POST['Sno'];
@@ -26,7 +28,7 @@ exit;
 		$rows=mysql_num_rows($res);
 
 			if($rows){
-						echo "<script language='javascript'>alert('¸ÃÑ§ÉúÒÑ´æÔÚ');history.back();</script>";
+						echo "<script language='javascript'>alert('è¯¥å­¦ç”Ÿå·²å­˜åœ¨');history.back();</script>";
 
 						exit;
 					 }
@@ -61,8 +63,10 @@ exit;
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
+    <meta charset="utf-8">
 
-    <title>Ñ§ÉúĞÅÏ¢¹ÜÀíÏµÍ³</title>
+
+    <title>å­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿ</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../SIMS/css/bootstrap.css" rel="stylesheet">
@@ -84,17 +88,17 @@ exit;
 	<div class="container" style="width:600px">
 		<?php
 				header("refresh:2;url=student_admin_result.php");
-				echo "<div class='alert alert-success'>Ìí¼Ó³É¹¦£¡2Ãëºó×Ô¶¯·µ»Ø</div>";
+				echo "<div class='alert alert-success'>æ·»åŠ æˆåŠŸï¼2ç§’åè‡ªåŠ¨è¿”å›</div>";
 
 			}else{
 				header("refresh:2;url=student_insert.html");
-				echo "<div class='alert alert-danger'>Ìí¼ÓÊ§°Ü...2Ãëºó×Ô¶¯·µ»Ø</div>";
+				echo "<div class='alert alert-danger'>æ·»åŠ å¤±è´¥...2ç§’åè‡ªåŠ¨è¿”å›</div>";
 
 			}
 			}
 			else 
 			{
-				echo "<script language='javascript'>alert('Ñ§ÉúĞÅÏ¢²»ÄÜÎª¿Õ!');history.back();</script>";
+				echo "<script language='javascript'>alert('å­¦ç”Ÿä¿¡æ¯ä¸èƒ½ä¸ºç©º!');history.back();</script>";
 			}
 		?>
     </div> <!-- /container -->
