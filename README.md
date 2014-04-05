@@ -15,7 +15,7 @@ Students' Information Management System
 ![github](https://raw.githubusercontent.com/Pyroblast/SIMS/master/preview2.png)
 
 
-###Contect
+###Contact
 
 >robertyi@126.com
 
