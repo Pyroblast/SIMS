@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 04 月 04 日 12:22
+-- 生成日期: 2014 年 04 月 24 日 13:09
 -- 服务器版本: 5.1.41
 -- PHP 版本: 5.3.1
 
@@ -69,19 +69,16 @@ CREATE TABLE IF NOT EXISTS `sreport` (
   UNIQUE KEY `Key_3` (`Key`),
   KEY `Key` (`Key`),
   KEY `Key_2` (`Key`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=96 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=115 ;
 
 --
 -- 转存表中的数据 `sreport`
 --
 
 INSERT INTO `sreport` (`Key`, `Sno`, `Cname`, `Mark`) VALUES
-(13, '001', 'Chinese', 0),
+(13, '001', 'Chinese', 98),
 (14, '001', 'Math', 0),
 (15, '001', 'English', 0),
-(84, '018', 'Chinese', 0),
-(85, '018', 'Math', 0),
-(86, '018', 'English', 0),
 (33, '002', 'Chinese', 0),
 (34, '002', 'Math', 0),
 (35, '002', 'English', 0),
@@ -130,15 +127,12 @@ INSERT INTO `sreport` (`Key`, `Sno`, `Cname`, `Mark`) VALUES
 (78, '017', 'Chinese', 0),
 (79, '017', 'Math', 0),
 (80, '017', 'English', 0),
-(87, '019', 'Chinese', 0),
-(88, '019', 'Math', 0),
-(89, '019', 'English', 0),
-(90, '020', 'Chinese', 0),
-(91, '020', 'Math', 0),
-(92, '020', 'English', 0),
-(93, '018', '', 0),
-(94, '018', '', 0),
-(95, '018', '', 0);
+(109, '018', 'Chinese', 0),
+(110, '018', 'Math', 0),
+(111, '018', 'English', 0),
+(112, '019', 'Chinese', 0),
+(113, '019', 'Math', 0),
+(114, '019', 'English', 0);
 
 -- --------------------------------------------------------
 
@@ -152,7 +146,9 @@ CREATE TABLE IF NOT EXISTS `student` (
   `age` varchar(50) NOT NULL,
   `Ssex` varchar(50) NOT NULL,
   `sdept` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`Sno`),
+  KEY `Sno` (`Sno`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -165,7 +161,7 @@ INSERT INTO `student` (`Sno`, `Sname`, `age`, `Ssex`, `sdept`, `password`) VALUE
 ('003', 'Mary', '20', 'Female', 'Literature', '003'),
 ('004', 'Tina', '20', 'Female', 'Literature', '004'),
 ('005', 'Jack', '20', 'Male', 'Mathematics', '005'),
-('006', 'Emily', '20', 'Female', 'Chinese', 'Alan'),
+('006', 'Emily', '20', 'Female', 'Chinese', '006'),
 ('007', 'Bill', '20', 'Male', 'Computer Science', '007'),
 ('008', 'David', '20', 'Male', 'Physics', '008'),
 ('009', 'Victoria', '20', 'Female', 'Philosophy', '009'),
@@ -177,7 +173,8 @@ INSERT INTO `student` (`Sno`, `Sname`, `age`, `Ssex`, `sdept`, `password`) VALUE
 ('015', 'Diana', '20', 'Female', 'Computer Science', '015'),
 ('016', 'Dennis', '20', 'Male', 'Architecture', '016'),
 ('017', 'Bob', '20', 'Male', 'Biology', '017'),
-('018', '张三', '20', 'Male', 'Architecture', '018');
+('018', '张三', '20', 'Male', 'Architecture', '018'),
+('019', '李四', '20', 'Male', 'Architecture', '019');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
